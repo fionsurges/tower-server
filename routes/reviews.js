@@ -3,13 +3,13 @@ const reviewsRouter = express.Router()
 
 const reviewsQueries = require('../reviewsQueries')
 
-reviewsRouter.get('/reviews', (request, response, next) => {
+reviewsRouter.get('/', (request, response, next) => {
     reviewsQueries.list().then(reviews => {
         response.json({reviews})
     }).catch(next)
 })
 
-reviewsRouter.get('/review/:id', (request, response, next) => {
+reviewsRouter.get('/:id', (request, response, next) => {
     reviewsQueries.read(request.params.id).then(review => {
         review 
             ? response.json({review})
@@ -17,19 +17,19 @@ reviewsRouter.get('/review/:id', (request, response, next) => {
     }).catch(next)
 })
 
-reviewsRouter.post('/reviews', (request, response, next) => {
+reviewsRouter.post('/', (request, response, next) => {
     reviewsQueries.create(request.body).then(review => {
         response.status(201).json({review})
     }).catch(next)
 })
 
-reviewsRouter.delete('/reviews/:id', (request, response, next) => {
+reviewsRouter.delete('/:id', (request, response, next) => {
     reviewsQueries.delete(request.params.id).then(() => {
         respnose.status(204).json({deleted: true})
     }).catch(next)
 })
 
-reviewsRouter.put('/reviews/:id', (request, response, next) => {
+reviewsRouter.put('/:id', (request, response, next) => {
     reviewsQueries.update(request.params.id, request.body).then(review => {
         response.json({review})
     }).catch(next)

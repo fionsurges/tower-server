@@ -3,13 +3,13 @@ const booksRouter = express.Router()
 
 const booksQueries = require('../bookQueries')
 
-booksRouter.get('/books', (request, response, next) => {
+booksRouter.get('/', (request, response, next) => {
     booksQueries.list().then(books => {
         response.json({books})
     }).catch(next)
 })
 
-booksRouter.get('books/:id', (request, response, next) => {
+booksRouter.get('/:id', (request, response, next) => {
     booksQueries.read(request.params.id).then(book => {
         book 
             ? response.json({book})
@@ -17,7 +17,7 @@ booksRouter.get('books/:id', (request, response, next) => {
     }).catch(next)
 })
 
-booksRouter.post('/books', (request, response, next) => {
+booksRouter.post('/', (request, response, next) => {
     booksQueries.create(request.body).then(book => {
         response.status(201).json({book})
     }).catch(next)
