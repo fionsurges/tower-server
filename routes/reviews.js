@@ -25,7 +25,7 @@ reviewsRouter.post('/', (request, response, next) => {
 
 reviewsRouter.delete('/:id', (request, response, next) => {
     reviewsQueries.delete(request.params.id).then(() => {
-        respnose.status(204).json({deleted: true})
+        response.status(204).json({deleted: true})
     }).catch(next)
 })
 
