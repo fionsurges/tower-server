@@ -29,7 +29,7 @@ exports.seed = function(knex, Promise) {
           bookTitle: 'The Fault in Our Stars',
           recommendedBy: 'Fion',
           rating: 10,
-          comments: 'Amazing!'
+          comments: 'I know it\'s a cult/cliche book and we all know the story, but I think it is really well written. You can dive really deep into the emotions and forget that these are 16 year olds.'
         },
       ])
     })

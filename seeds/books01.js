@@ -26,7 +26,16 @@ exports.seed = function(knex, Promise) {
           author: 'Amber Smith',
           genre: 'Fiction',
           year: 2016
+        },
+        {
+          id: 4, 
+          title: 'The Fault in Our Stars',
+          imageUrl: 'https://images-na.ssl-images-amazon.com/images/I/514nzFeTWmL._SX324_BO1,204,203,200_.jpg',
+          author: 'John Green',
+          genre: 'Fiction',
+          year: 2012        
         }
+
       ])
     })
     .then(() => {
