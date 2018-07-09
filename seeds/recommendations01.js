@@ -23,10 +23,17 @@ exports.seed = function(knex, Promise) {
           recommendedBy: 'Fion',
           rating: 10,
           comments: 'Definitely a little heavy because it is about a girl who is raped by her brother\'s bff before middle school. However, it sheds a lot of light into the stages of grief and how the trauma impacts the rest of her life. Also goes through the healing process.'
-        }
+        },
+        {
+          id: 4, 
+          bookTitle: 'The Fault in Our Stars',
+          recommendedBy: 'Fion',
+          rating: 10,
+          comments: 'Amazing!'
+        },
       ])
     })
     .then(() => {
-      return knex.raw('ALTER SEQUENCE recommendations_id_seq RESTART with 4')
+      return knex.raw('ALTER SEQUENCE recommendations_id_seq RESTART with 5')
     })
 }
